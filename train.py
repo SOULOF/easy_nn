@@ -3,7 +3,7 @@ from sklearn.utils import shuffle, resample
 import matplotlib.pyplot as plt
 import numpy as np
 
-from nn import Linear, Sigmoid, MSE, Placeholder
+from nn import Linear, Sigmoid, ReLU, MSE, Placeholder
 from utils import topological_sort_feed_dict, forward_and_backward, optimize
 
 if __name__ == '__main__':
@@ -32,6 +32,7 @@ if __name__ == '__main__':
 
     l1 = Linear(X, W1, b1)
     s1 = Sigmoid(l1)
+    #s1 = ReLU(l1)
     l2 = Linear(s1, W2, b2)
     cost = MSE(y, l2)
 
