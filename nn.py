@@ -153,7 +153,6 @@ class MSE(Node):
 
         self.m = self.inputs[0].value.shape[0]
         self.diff = y - a
-
         self.value = np.mean(self.diff**2)
 
 
